@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Device Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 50%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Device Table</h2>
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for users..">
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">No</th>
+                <th onclick="sortTable(1)">User</th>
+                <th onclick="sortTable(2)">Department</th>
+                <th onclick="sortTable(3)">Desktop/Laptop</th>
+                <th>Note / Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Main Server</td><td>Admin</td><td>DTPC</td><td></td></tr>
+            <tr><td>2</td><td>Mr. Dhananjay Shedbale</td><td>Management</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>3</td><td>Mr. Sunil Konde</td><td>Management</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>4</td><td>Mr. Sunil Patil</td><td>Admin</td><td>DTPC</td><td></td></tr>
+            <tr><td>5</td><td>Mrs. Nilam Kothmire</td><td>Marketing</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>6</td><td>Mr. Bhushan Bhujbal</td><td>HR</td><td>DTPC</td><td></td></tr>
+            <tr><td>7</td><td>Mr. Sagar Bhomale</td><td>HR</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>8</td><td>Ms. Vaishanavi Langote</td><td>HR</td><td>DTPC</td><td></td></tr>
+            <tr><td>9</td><td>Ms. Tejswini Parve</td><td>Account</td><td>DTPC</td><td></td></tr>
+            <tr><td>10</td><td>Mr. Pavan Wavhal</td><td>Account</td><td>DTPC</td><td></td></tr>
+            <tr><td>11</td><td>Mrs. Saraswati Vishwkarma</td><td>Account</td><td>DTPC</td><td></td></tr>
+            <tr><td>12</td><td>Mr. Kamlesh Gotarane</td><td>Account</td><td>DTPC</td><td></td></tr>
+            <tr><td>13</td><td>Ms. Tejswini Parve</td><td>Account</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>14</td><td>Ms. Tejswini Parve</td><td>Account</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>15</td><td>Mr. Aryan Sawant</td><td>Account</td><td>DTPC</td><td></td></tr>
+            <tr><td>16</td><td>Mr. Ashwin Nagrale</td><td>Development</td><td>DTPC</td><td></td></tr>
+            <tr><td>17</td><td>Mr. Rithish Pawar</td><td>Development</td><td>DTPC</td><td></td></tr>
+            <tr><td>18</td><td>Ms. Komal Bhatkar</td><td>Development</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>19</td><td>Mr. Sharad Mahajan</td><td>Production</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>20</td><td>Mr. Bahubali Hatgine</td><td>Production</td><td>DTPC</td><td></td></tr>
+            <tr><td>21</td><td>Mr. Vikas Golse</td><td>Production</td><td>DTPC</td><td></td></tr>
+            <tr><td>22</td><td>Mr. Shamrao Jadhav</td><td>Maintanance</td><td>DTPC</td><td></td></tr>
+            <tr><td>23</td><td>Mr. Nawal Singh</td><td>Quality</td><td>DTPC</td><td></td></tr>
+            <tr><td>24</td><td>Mr. Nawal Singh</td><td>Quality</td><td>LAPTOP</td><td></td></tr>
+            <tr><td>25</td><td>Mrs. Surekha Jadhav</td><td>Quality</td><td>DTPC</td><td></td></tr>
+            <tr><td>26</td><td>CMM</td><td>Quality/SR</td><td>DTPC/HP</td><td></td></tr>
+            <tr><td>27</td><td>CMM</td><td>Quality/SR</td><td>DTPC/SMSM</td><td></td></tr>
+            <tr><td>28</td><td>CMM</td><td>Quality/SR</td><td>DTPC/LG</td><td></td></tr>
+            <tr><td>29</td><td>Lab</td><td>M/P/D</td><td>DTPC</td><td></td></tr>
+            <tr><td>30</td><td>Mr. Harshal Parve</td><td>Store</td><td>DTPC</td><td></td></tr>
+            <tr><td>31</td><td>Mr. Atul Pande</td><td>Store</td><td>DTPC</td><td></td></tr>
+            <tr><td>32</td><td>Mr. Prakash Patil</td><td>Security</td><td>DTPC</td><td></td></tr>
+            <tr><td>33</td><td>Mr. Dinesh Patil</td><td>Purchase</td><td>LAPTOP</td><td></td></tr>
+        </tbody>
+    </table>
+    
+    <script>
+        function sortTable(n) {
+            let table = document.getElementById("userTable");
+            let rows = Array.from(table.rows).slice(1);
+            let ascending = table.rows[0].cells[n].dataset.order !== "asc";
+            rows.sort((rowA, rowB) => {
+                let cellA = rowA.cells[n].innerText;
+                let cellB = rowB.cells[n].innerText;
+                return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            });
+            rows.forEach(row => table.appendChild(row));
+            table.rows[0].cells[n].dataset.order = ascending ? "asc" : "desc";
+        }
+        function searchTable() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let rows = document.querySelectorAll("#userTable tbody tr");
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
